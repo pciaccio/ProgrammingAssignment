@@ -58,74 +58,216 @@ Additional vectors obtained by averaging the signals in a signal window sample. 
 ##Information About the Summary Choices
 
 The program run_analysis extracts only the measurements on the mean and standard deviation for each measurement above.
-The variables that are in the output from run_analysis are:
-* SubjectId
-*>Contains the Subject ID of the 30 volunteers in the experiment
-** Values should be between 1 and 30
-* Activity
-* TimeBodyAccelerometerXMean=mean(tBodyAcc.mean...X)
-* TimeBodyAccelerometerYMean=mean(tBodyAcc.mean...Y)
-* TimeBodyAccelerometerZMean=mean(tBodyAcc.mean...Z)
-* TimeGravityAccelerometerXMean=mean(tGravityAcc.mean...X)
-* TimeGravityAccelerometerYMean=mean(tGravityAcc.mean...Y)
-* TimeGravityAccelerometerZMean=mean(tGravityAcc.mean...Z)
-* TimeBodyAccelerometerJerkXMean=mean(tBodyAccJerk.mean...X)
-* TimeBodyAccelerometerJerkYMean=mean(tBodyAccJerk.mean...Y)
-* TimeBodyAccelerometerJerkZMean=mean(tBodyAccJerk.mean...Z)
-* TimeBodyGyroscopeXMean=mean(tBodyGyro.mean...X)
-* TimeBodyGyroscopeYMean=mean(tBodyGyro.mean...Y)
-* TimeBodyGyroscopeZMean=mean(tBodyGyro.mean...Z)
-* TimeBodyGyroscopeJerkXMean=mean(tBodyGyroJerk.mean...X)
-* TimeBodyGyroscopeJerkYMean=mean(tBodyGyroJerk.mean...Y)
-* TimeBodyGyroscopeJerkZMean=mean(tBodyGyroJerk.mean...Z)
-* TimeBodyAccelerometerMagnitudeMean=mean(tBodyAccMag.mean..)
-* TimeGravityAccelerometerMagnitudeMean=mean(tGravityAccMag.mean..)
-* TimeBodyAccelerometerJerkMagnitudeMean=mean(tBodyAccJerkMag.mean..)
-* TimeBodyGyroscopeMagnitudeMean=mean(tBodyGyroMag.mean..)
-* TimeBodyGyroscopeJerkMagnitudeMean=mean(tBodyGyroJerkMag.mean..)
-* FrequencyBodyAccelerometerXMean=mean(fBodyAcc.mean...X)
-* FrequencyBodyAccelerometerYMean=mean(fBodyAcc.mean...Y)
-* FrequencyBodyAccelerometerZMean=mean(fBodyAcc.mean...Z)
-* FrequencyBodyAccelerometerJerkXMean=mean(fBodyAccJerk.mean...X)
-* FrequencyBodyAccelerometerJerkYMean=mean(fBodyAccJerk.mean...Y)
-* FrequencyBodyAccelerometerJerkZMean=mean(fBodyAccJerk.mean...Z)
-* FrequencyBodyGyroscopeXMean=mean(fBodyGyro.mean...X)
-* FrequencyBodyGyroscopeYMean=mean(fBodyGyro.mean...Y)
-* FrequencyBodyGyroscopeZMean=mean(fBodyGyro.mean...Z)
-* FrequencyBodyAccelerometerMagnitudeMean=mean(fBodyAccMag.mean..)
-* FrequencyBodyAccelerometerJerkMagnitudeMean=mean(fBodyBodyAccJerkMag.mean..)
-* FrequencyBodyGyroscopeMagnitudeMean=mean(fBodyBodyGyroMag.mean..)
-* FrequencyBodyGyroscopeJerkMagnitudeMean=mean(fBodyBodyGyroJerkMag.mean..)
-* TimeBodyAccelerometerXStD=mean(tBodyAcc.std...X)
-* TimeBodyAccelerometerYStD=mean(tBodyAcc.std...Y)
-* TimeBodyAccelerometerZStD=mean(tBodyAcc.std...Z)
-* TimeGravityAccelerometerXStD=mean(tGravityAcc.std...X)
-* TimeGravityAccelerometerYStD=mean(tGravityAcc.std...Y)
-* TimeGravityAccelerometerZStD=mean(tGravityAcc.std...Z)
-* TimeBodyAccelerometerJerkXStD=mean(tBodyAccJerk.std...X)
-* TimeBodyAccelerometerJerkYStD=mean(tBodyAccJerk.std...Y)
-* TimeBodyAccelerometerJerkZStD=mean(tBodyAccJerk.std...Z)
-* TimeBodyGyroscopeXStD=mean(tBodyGyro.std...X)
-* TimeBodyGyroscopeYStD=mean(tBodyGyro.std...Y)
-* TimeBodyGyroscopeZStD=mean(tBodyGyro.std...Z)
-* TimeBodyGyroscopeJerkXStD=mean(tBodyGyroJerk.std...X)
-* TimeBodyGyroscopeJerkYStD=mean(tBodyGyroJerk.std...Y)
-* TimeBodyGyroscopeJerkZStD=mean(tBodyGyroJerk.std...Z)
-* TimeBodyAccelerometerMagnitudeStD=mean(tBodyAccMag.std..)
-* TimeGravityAccelerometerMagnitudeStD=mean(tGravityAccMag.std..)
-* TimeBodyAccelerometerJerkMagnitudeStD=mean(tBodyAccJerkMag.std..)
-* TimeBodyGyroscopeMagnitudeStD=mean(tBodyGyroMag.std..)
-* TimeBodyGyroscopeJerkMagnitudeStD=mean(tBodyGyroJerkMag.std..)
-* FrequencyBodyAccelerometerXStD=mean(fBodyAcc.std...X)
-* FrequencyBodyAccelerometerYStD=mean(fBodyAcc.std...Y)
-* FrequencyBodyAccelerometerZStD=mean(fBodyAcc.std...Z)
-* FrequencyBodyAccelerometerJerkXStD=mean(fBodyAccJerk.std...X)
-* FrequencyBodyAccelerometerJerkYStD=mean(fBodyAccJerk.std...Y)
-* FrequencyBodyAccelerometerJerkZStD=mean(fBodyAccJerk.std...Z)
-* FrequencyBodyGyroscopeXStD=mean(fBodyGyro.std...X)
-* FrequencyBodyGyroscopeYStD=mean(fBodyGyro.std...Y)
-* FrequencyBodyGyroscopeZStD=mean(fBodyGyro.std...Z)
-* FrequencyBodyAccelerometerMagnitudeStD=mean(fBodyAccMag.std..)
-* FrequencyBodyAccelerometerJerkMagnitudeStD=mean(fBodyBodyAccJerkMag.std..)
-* FrequencyBodyGyroscopeMagnitudeStD=mean(fBodyBodyGyroMag.std..)
-* FrequencyBodyGyroscopeJerkMagnitudeStD=mean(fBodyBodyGyroJerkMag.std..)
+The variables that are in the summary data shown in the output from run_analysis are:
+
+######SubjectId
+* Contains the Subject ID of the 30 volunteers in the experiment
+* Values should be between 1 and 30
+
+######Activity
+* One of six activities performed by the subject
+* activities include:
+    * WALKING 
+    * WALKING UPSTAIRS
+    * WALKING DOWNSTAIRS
+    * SITTING
+    * STANDING
+    * LAYING
+
+######TimeBodyAccelerometerXMean
+* Calculated as mean(tBodyAcc-mean()-X) for each Subject ID and Activity
+
+######TimeBodyAccelerometerYMean
+* Calculated as mean(tBodyAcc-mean()-Y) for each Subject ID and Activity
+
+######TimeBodyAccelerometerZMean
+* Calculated as mean(tBodyAcc-mean()-Z) for each Subject ID and Activity
+
+######TimeGravityAccelerometerXMean
+* Calculated as mean(tGravityAcc-mean()-X) for each Subject ID and Activity
+
+######TimeGravityAccelerometerYMean
+* Calculated as mean(tGravityAcc-mean()-Y) for each Subject ID and Activity
+
+######TimeGravityAccelerometerZMean
+* Calculated as mean(tGravityAcc-mean()-Z) for each Subject ID and Activity
+
+######TimeBodyAccelerometerJerkXMean
+* Calculated as mean(tBodyAccJerk-mean()-X) for each Subject ID and Activity
+
+######TimeBodyAccelerometerJerkYMean
+* Calculated as mean(tBodyAccJerk-mean()-Y) for each Subject ID and Activity
+
+######TimeBodyAccelerometerJerkZMean
+* Calculated as mean(tBodyAccJerk-mean()-Z) for each Subject ID and Activity
+
+######TimeBodyGyroscopeXMean
+* Calculated as mean(tBodyGyro-mean()-X) for each Subject ID and Activity
+
+######TimeBodyGyroscopeYMean
+* Calculated as mean(tBodyGyro-mean()-Y) for each Subject ID and Activity
+
+######TimeBodyGyroscopeZMean
+* Calculated as mean(tBodyGyro-mean()-Z) for each Subject ID and Activity
+
+######TimeBodyGyroscopeJerkXMean
+* Calculated as mean(tBodyGyroJerk-mean()-X) for each Subject ID and Activity
+
+######TimeBodyGyroscopeJerkYMean
+* Calculated as mean(tBodyGyroJerk-mean()-Y) for each Subject ID and Activity
+
+######TimeBodyGyroscopeJerkZMean
+* Calculated as mean(tBodyGyroJerk-mean()-Z) for each Subject ID and Activity
+
+######TimeBodyAccelerometerMagnitudeMean
+* Calculated as mean(tBodyAccMag-mean()) for each Subject ID and Activity
+
+######TimeGravityAccelerometerMagnitudeMean
+* Calculated as mean(tGravityAccMag-mean()) for each Subject ID and Activity
+
+######TimeBodyAccelerometerJerkMagnitudeMean
+* Calculated as mean(tBodyAccJerkMag-mean()) for each Subject ID and Activity
+
+######TimeBodyGyroscopeMagnitudeMean
+* Calculated as mean(tBodyGyroMag-mean()) for each Subject ID and Activity
+
+######TimeBodyGyroscopeJerkMagnitudeMean
+* Calculated as mean(tBodyGyroJerkMag-mean()) for each Subject ID and Activity
+
+######FrequencyBodyAccelerometerXMean
+* Calculated as mean(fBodyAcc-mean()-X) for each Subject ID and Activity
+
+######FrequencyBodyAccelerometerYMean
+* Calculated as mean(fBodyAcc-mean()-Y) for each Subject ID and Activity
+
+######FrequencyBodyAccelerometerZMean
+* Calculated as mean(fBodyAcc-mean()-Z) for each Subject ID and Activity
+
+######FrequencyBodyAccelerometerJerkXMean
+* Calculated as mean(fBodyAccJerk-mean()-X) for each Subject ID and Activity
+
+######FrequencyBodyAccelerometerJerkYMean
+* Calculated as mean(fBodyAccJerk-mean()-Y) for each Subject ID and Activity
+
+######FrequencyBodyAccelerometerJerkZMean
+* Calculated as mean(fBodyAccJerk-mean()-Z) for each Subject ID and Activity
+
+######FrequencyBodyGyroscopeXMean
+* Calculated as mean(fBodyGyro-mean()-X) for each Subject ID and Activity
+
+######FrequencyBodyGyroscopeYMean
+* Calculated as mean(fBodyGyro-mean()-Y) for each Subject ID and Activity
+
+######FrequencyBodyGyroscopeZMean
+* Calculated as mean(fBodyGyro-mean()-Z) for each Subject ID and Activity
+
+######FrequencyBodyAccelerometerMagnitudeMean
+* Calculated as mean(fBodyAccMag-mean()) for each Subject ID and Activity
+
+######FrequencyBodyAccelerometerJerkMagnitudeMean
+* Calculated as mean(fBodyBodyAccJerkMag-mean()) for each Subject ID and Activity
+
+######FrequencyBodyGyroscopeMagnitudeMean
+* Calculated as mean(fBodyBodyGyroMag-mean()) for each Subject ID and Activity
+
+######FrequencyBodyGyroscopeJerkMagnitudeMean
+* Calculated as mean(fBodyBodyGyroJerkMag-mean()) for each Subject ID and Activity
+
+######TimeBodyAccelerometerXStD
+* Calculated as mean(tBodyAcc-std()-X) for each Subject ID and Activity
+
+######TimeBodyAccelerometerYStD
+* Calculated as mean(tBodyAcc-std()-Y) for each Subject ID and Activity
+
+######TimeBodyAccelerometerZStD
+* Calculated as mean(tBodyAcc-std()-Z) for each Subject ID and Activity
+
+######TimeGravityAccelerometerXStD
+* Calculated as mean(tGravityAcc-std()-X) for each Subject ID and Activity
+
+######TimeGravityAccelerometerYStD
+* Calculated as mean(tGravityAcc-std()-Y) for each Subject ID and Activity
+
+######TimeGravityAccelerometerZStD
+* Calculated as mean(tGravityAcc-std()-Z) for each Subject ID and Activity
+
+######TimeBodyAccelerometerJerkXStD
+* Calculated as mean(tBodyAccJerk-std()-X) for each Subject ID and Activity
+
+######TimeBodyAccelerometerJerkYStD
+* Calculated as mean(tBodyAccJerk-std()-Y) for each Subject ID and Activity
+
+######TimeBodyAccelerometerJerkZStD
+* Calculated as mean(tBodyAccJerk-std()-Z) for each Subject ID and Activity
+
+######TimeBodyGyroscopeXStD
+* Calculated as mean(tBodyGyro-std()-X) for each Subject ID and Activity
+
+######TimeBodyGyroscopeYStD
+* Calculated as mean(tBodyGyro-std()-Y) for each Subject ID and Activity
+
+######TimeBodyGyroscopeZStD
+* Calculated as mean(tBodyGyro-std()-Z) for each Subject ID and Activity
+
+######TimeBodyGyroscopeJerkXStD
+* Calculated as mean(tBodyGyroJerk-std()-X) for each Subject ID and Activity
+
+######TimeBodyGyroscopeJerkYStD
+* Calculated as mean(tBodyGyroJerk-std()-Y) for each Subject ID and Activity
+
+######TimeBodyGyroscopeJerkZStD
+* Calculated as mean(tBodyGyroJerk-std()-Z) for each Subject ID and Activity
+
+######TimeBodyAccelerometerMagnitudeStD
+* Calculated as mean(tBodyAccMag-std()) for each Subject ID and Activity
+
+######TimeGravityAccelerometerMagnitudeStD
+* Calculated as mean(tGravityAccMag-std()) for each Subject ID and Activity
+
+######TimeBodyAccelerometerJerkMagnitudeStD
+* Calculated as mean(tBodyAccJerkMag-std()) for each Subject ID and Activity
+
+######TimeBodyGyroscopeMagnitudeStD
+* Calculated as mean(tBodyGyroMag-std()) for each Subject ID and Activity
+
+######TimeBodyGyroscopeJerkMagnitudeStD
+* Calculated as mean(tBodyGyroJerkMag-std()) for each Subject ID and Activity
+
+######FrequencyBodyAccelerometerXStD
+* Calculated as mean(fBodyAcc-std()-X) for each Subject ID and Activity
+
+######FrequencyBodyAccelerometerYStD
+* Calculated as mean(fBodyAcc-std()-Y) for each Subject ID and Activity
+
+######FrequencyBodyAccelerometerZStD
+* Calculated as mean(fBodyAcc-std()-Z) for each Subject ID and Activity
+
+######FrequencyBodyAccelerometerJerkXStD
+* Calculated as mean(fBodyAccJerk-std()-X) for each Subject ID and Activity
+
+######FrequencyBodyAccelerometerJerkYStD
+* Calculated as mean(fBodyAccJerk-std()-Y) for each Subject ID and Activity
+
+######FrequencyBodyAccelerometerJerkZStD
+* Calculated as mean(fBodyAccJerk-std()-Z) for each Subject ID and Activity
+
+######FrequencyBodyGyroscopeXStD
+* Calculated as mean(fBodyGyro-std()-X) for each Subject ID and Activity
+
+######FrequencyBodyGyroscopeYStD
+* Calculated as mean(fBodyGyro-std()-Y) for each Subject ID and Activity
+
+######FrequencyBodyGyroscopeZStD
+* Calculated as mean(fBodyGyro-std()-Z) for each Subject ID and Activity
+
+######FrequencyBodyAccelerometerMagnitudeStD
+* Calculated as mean(fBodyAccMag-std()) for each Subject ID and Activity
+
+######FrequencyBodyAccelerometerJerkMagnitudeStD
+* Calculated as mean(fBodyBodyAccJerkMag-std()) for each Subject ID and Activity
+
+######FrequencyBodyGyroscopeMagnitudeStD
+* Calculated as mean(fBodyBodyGyroMag-std()) for each Subject ID and Activity
+
+######FrequencyBodyGyroscopeJerkMagnitudeStD
+* Calculated as mean(fBodyBodyGyroJerkMag-std()) for each Subject ID and Activity
