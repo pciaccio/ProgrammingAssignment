@@ -1,7 +1,7 @@
 # ProgrammingAssignment
 ##Programming Assignment for Getting and Cleaning Data
 
-The function run_analysis reads in data from the various text files listed above and merges them together.  It returns a data frame that consists of a summary of the data based on the Subject ID and Activity performed. The data is the summary of the data is the mean calculated for the Mean and Standard Deviation measurement variables.
+The function run_analysis reads in data from the various text files listed below and merges them together.  It returns a data frame that consists of a summary of the data based on the Subject ID and Activity performed. The data is the summary of the data is the mean calculated for the Mean and Standard Deviation measurement variables.
 
 ##Raw Data
 The raw data comes from Human Activity Recognition Using Smartphones Dataset:
