@@ -1,30 +1,6 @@
 #Code Book for run_analysis.R
 
-##Raw Data
-The raw data comes from Human Activity Recognition Using Smartphones Dataset: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
-  
-The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, we captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. The experiments have been video-recorded to label the data manually. The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data. 
-
-The following text files should be in your working directory before running run_analysis.R:
-  * features.txt : list of all features
-  * activity_labels.txt : links the class labels with their activity name
-  * subject_train.txt : Each row identifies the subject who performed the activity for each window sample in the train dataset
-  * x_train.txt : training set
-  * y_train.txt : training labels
-  * subject_test.txt : Each row identifies the subject who performed the activity for each window sample in the train dataset
-  * x_test.txt : test set
-  * y_test.txt : test labels
-  
-####License:
-Use of this dataset in publications must be acknowledged by referencing the following publication [1] 
-
-[1] Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. Human Activity Recognition on Smartphones using a Multiclass Hardware-Friendly Support Vector Machine. International Workshop of Ambient Assisted Living (IWAAL 2012). Vitoria-Gasteiz, Spain. Dec 2012
-
-This dataset is distributed AS-IS and no responsibility implied or explicit can be addressed to the authors or their institutions for its use or misuse. Any commercial use is prohibited.
-
-Jorge L. Reyes-Ortiz, Alessandro Ghio, Luca Oneto, Davide Anguita. November 2012.
-
-##Information About the Variables
+##Information About the Raw Variables
 
 The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
 
@@ -81,4 +57,75 @@ Additional vectors obtained by averaging the signals in a signal window sample. 
 
 ##Information About the Summary Choices
 
-The data 
+The program run_analysis extracts only the measurements on the mean and standard deviation for each measurement above.
+The variables that are in the output from run_analysis are:
+* SubjectId
+*>Contains the Subject ID of the 30 volunteers in the experiment
+** Values should be between 1 and 30
+* Activity
+* TimeBodyAccelerometerXMean=mean(tBodyAcc.mean...X)
+* TimeBodyAccelerometerYMean=mean(tBodyAcc.mean...Y)
+* TimeBodyAccelerometerZMean=mean(tBodyAcc.mean...Z)
+* TimeGravityAccelerometerXMean=mean(tGravityAcc.mean...X)
+* TimeGravityAccelerometerYMean=mean(tGravityAcc.mean...Y)
+* TimeGravityAccelerometerZMean=mean(tGravityAcc.mean...Z)
+* TimeBodyAccelerometerJerkXMean=mean(tBodyAccJerk.mean...X)
+* TimeBodyAccelerometerJerkYMean=mean(tBodyAccJerk.mean...Y)
+* TimeBodyAccelerometerJerkZMean=mean(tBodyAccJerk.mean...Z)
+* TimeBodyGyroscopeXMean=mean(tBodyGyro.mean...X)
+* TimeBodyGyroscopeYMean=mean(tBodyGyro.mean...Y)
+* TimeBodyGyroscopeZMean=mean(tBodyGyro.mean...Z)
+* TimeBodyGyroscopeJerkXMean=mean(tBodyGyroJerk.mean...X)
+* TimeBodyGyroscopeJerkYMean=mean(tBodyGyroJerk.mean...Y)
+* TimeBodyGyroscopeJerkZMean=mean(tBodyGyroJerk.mean...Z)
+* TimeBodyAccelerometerMagnitudeMean=mean(tBodyAccMag.mean..)
+* TimeGravityAccelerometerMagnitudeMean=mean(tGravityAccMag.mean..)
+* TimeBodyAccelerometerJerkMagnitudeMean=mean(tBodyAccJerkMag.mean..)
+* TimeBodyGyroscopeMagnitudeMean=mean(tBodyGyroMag.mean..)
+* TimeBodyGyroscopeJerkMagnitudeMean=mean(tBodyGyroJerkMag.mean..)
+* FrequencyBodyAccelerometerXMean=mean(fBodyAcc.mean...X)
+* FrequencyBodyAccelerometerYMean=mean(fBodyAcc.mean...Y)
+* FrequencyBodyAccelerometerZMean=mean(fBodyAcc.mean...Z)
+* FrequencyBodyAccelerometerJerkXMean=mean(fBodyAccJerk.mean...X)
+* FrequencyBodyAccelerometerJerkYMean=mean(fBodyAccJerk.mean...Y)
+* FrequencyBodyAccelerometerJerkZMean=mean(fBodyAccJerk.mean...Z)
+* FrequencyBodyGyroscopeXMean=mean(fBodyGyro.mean...X)
+* FrequencyBodyGyroscopeYMean=mean(fBodyGyro.mean...Y)
+* FrequencyBodyGyroscopeZMean=mean(fBodyGyro.mean...Z)
+* FrequencyBodyAccelerometerMagnitudeMean=mean(fBodyAccMag.mean..)
+* FrequencyBodyAccelerometerJerkMagnitudeMean=mean(fBodyBodyAccJerkMag.mean..)
+* FrequencyBodyGyroscopeMagnitudeMean=mean(fBodyBodyGyroMag.mean..)
+* FrequencyBodyGyroscopeJerkMagnitudeMean=mean(fBodyBodyGyroJerkMag.mean..)
+* TimeBodyAccelerometerXStD=mean(tBodyAcc.std...X)
+* TimeBodyAccelerometerYStD=mean(tBodyAcc.std...Y)
+* TimeBodyAccelerometerZStD=mean(tBodyAcc.std...Z)
+* TimeGravityAccelerometerXStD=mean(tGravityAcc.std...X)
+* TimeGravityAccelerometerYStD=mean(tGravityAcc.std...Y)
+* TimeGravityAccelerometerZStD=mean(tGravityAcc.std...Z)
+* TimeBodyAccelerometerJerkXStD=mean(tBodyAccJerk.std...X)
+* TimeBodyAccelerometerJerkYStD=mean(tBodyAccJerk.std...Y)
+* TimeBodyAccelerometerJerkZStD=mean(tBodyAccJerk.std...Z)
+* TimeBodyGyroscopeXStD=mean(tBodyGyro.std...X)
+* TimeBodyGyroscopeYStD=mean(tBodyGyro.std...Y)
+* TimeBodyGyroscopeZStD=mean(tBodyGyro.std...Z)
+* TimeBodyGyroscopeJerkXStD=mean(tBodyGyroJerk.std...X)
+* TimeBodyGyroscopeJerkYStD=mean(tBodyGyroJerk.std...Y)
+* TimeBodyGyroscopeJerkZStD=mean(tBodyGyroJerk.std...Z)
+* TimeBodyAccelerometerMagnitudeStD=mean(tBodyAccMag.std..)
+* TimeGravityAccelerometerMagnitudeStD=mean(tGravityAccMag.std..)
+* TimeBodyAccelerometerJerkMagnitudeStD=mean(tBodyAccJerkMag.std..)
+* TimeBodyGyroscopeMagnitudeStD=mean(tBodyGyroMag.std..)
+* TimeBodyGyroscopeJerkMagnitudeStD=mean(tBodyGyroJerkMag.std..)
+* FrequencyBodyAccelerometerXStD=mean(fBodyAcc.std...X)
+* FrequencyBodyAccelerometerYStD=mean(fBodyAcc.std...Y)
+* FrequencyBodyAccelerometerZStD=mean(fBodyAcc.std...Z)
+* FrequencyBodyAccelerometerJerkXStD=mean(fBodyAccJerk.std...X)
+* FrequencyBodyAccelerometerJerkYStD=mean(fBodyAccJerk.std...Y)
+* FrequencyBodyAccelerometerJerkZStD=mean(fBodyAccJerk.std...Z)
+* FrequencyBodyGyroscopeXStD=mean(fBodyGyro.std...X)
+* FrequencyBodyGyroscopeYStD=mean(fBodyGyro.std...Y)
+* FrequencyBodyGyroscopeZStD=mean(fBodyGyro.std...Z)
+* FrequencyBodyAccelerometerMagnitudeStD=mean(fBodyAccMag.std..)
+* FrequencyBodyAccelerometerJerkMagnitudeStD=mean(fBodyBodyAccJerkMag.std..)
+* FrequencyBodyGyroscopeMagnitudeStD=mean(fBodyBodyGyroMag.std..)
+* FrequencyBodyGyroscopeJerkMagnitudeStD=mean(fBodyBodyGyroJerkMag.std..)
